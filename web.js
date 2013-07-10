@@ -4,7 +4,6 @@ var fs = require('fs');
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  //response.send('Hello World updated!');
 	fs.readFile('index.html', function(error, content){
 		if (error) {
 			console.log(error);
@@ -12,7 +11,7 @@ app.get('/', function(request, response) {
 		else {
 			response.write(content);
 		}
-	}
+	});
 });
 
 var port = process.env.PORT || 5000;
