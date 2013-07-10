@@ -11,8 +11,8 @@ app.get('/', function(request, response) {
 		else {
 			response.write(content);
 		}
+		response.end();
 	});
-	response.end();
 });
 
 var port = process.env.PORT || 5000;
